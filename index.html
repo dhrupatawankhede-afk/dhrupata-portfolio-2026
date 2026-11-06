@@ -5,90 +5,228 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhrupata Wankhede | Portfolio</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#080d20;color:white;line-height:1.6}
-header{padding:20px 8%;display:flex;justify-content:space-between;align-items:center;background:#101831;position:sticky;top:0}
-.logo{color:#a78bfa;font-size:22px;font-weight:bold}
-nav a{color:white;text-decoration:none;margin-left:18px}
-section{padding:75px 9%}
-.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center}
-.hero h1{font-size:48px;margin:15px 0}
-.hero h1 span{color:#a78bfa}
-.hero p{color:#cbd5e1;max-width:650px}
-.tag{color:#60a5fa}
-.btn{display:inline-block;margin-top:25px;padding:12px 24px;background:#7c3aed;color:white;text-decoration:none;border-radius:8px}
-h2{font-size:30px;color:#a78bfa;margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#151f3c;padding:24px;border-radius:14px;border:1px solid #334155}
-.card h3{color:#93c5fd;margin-bottom:10px}
-.card p{color:#cbd5e1}
-footer{text-align:center;padding:25px;background:#101831;color:#cbd5e1}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080d1c;
+  color: white;
+  line-height: 1.6;
+}
+
+header {
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #10182d;
+  position: sticky;
+  top: 0;
+}
+
+.logo { color: #a78bfa; font-size: 22px; font-weight: bold; }
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+}
+
+section { padding: 65px 8%; }
+
+.hero {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+.highlight { color: #a78bfa; }
+
+.hero p, .about p {
+  color: #c5c9d8;
+  max-width: 650px;
+}
+
+.btn {
+  display: inline-block;
+  background: #7655ff;
+  color: white;
+  padding: 11px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #a78bfa;
+  margin-bottom: 22px;
+  font-size: 30px;
+}
+
+.skills, .projects, .superpower-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #151e35;
+  padding: 24px;
+  border: 1px solid #343d61;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #a78bfa;
+}
+
+.card h3 { margin-bottom: 10px; color: #c4b5fd; }
+
+.card p { color: #c5c9d8; }
+
+.power-card {
+  cursor: pointer;
+  text-align: center;
+}
+
+.power-card button {
+  margin-top: 15px;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 7px;
+  background: #7655ff;
+  color: white;
+  cursor: pointer;
+}
+
+#power-result {
+  margin-top: 25px;
+  color: #c4b5fd;
+  text-align: center;
+  padding: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #10182d;
+  color: #c5c9d8;
+}
+
+@media(max-width:600px) {
+  header { flex-direction: column; gap: 12px; }
+  nav a { margin: 5px; font-size: 13px; }
+  .hero h1 { font-size: 32px; }
+}
 </style>
 </head>
+
+<body>
+
+<header>
+  <div class="logo">DW.</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#superpower">Superpower</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <p>Hello, welcome to my portfolio!</p>
+  <h1>I'm <span class="highlight">Dhrupata Wankhede</span></h1>
+  <h3>ENTC Engineering Student | Creative Designer | Tech Enthusiast</h3>
+  <p>Exploring technology, creativity and innovation to build meaningful solutions.</p>
+  <a href="#about" class="btn">Explore My Portfolio</a>
+</section>
+
+<section class="about" id="about">
+  <h2>About Me</h2>
+  <p>I am an Electronics and Telecommunication Engineering student passionate about technology, creative design and innovation. I enjoy learning new skills, exploring IoT and turning ideas into practical projects.</p>
+</section>
+
+<section id="skills">
+  <h2>My Skills</h2>
+  <div class="skills">
+    <div class="card"><h3>🎨 Design</h3><p>Creative Design & Branding</p></div>
+    <div class="card"><h3>💻 Technology</h3><p>ENTC & IoT Exploration</p></div>
+    <div class="card"><h3>🤝 Teamwork</h3><p>Communication & Collaboration</p></div>
+    <div class="card"><h3>🚀 Learning</h3><p>Problem Solving & Innovation</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>🌱 Smart Farming Assistant</h3>
+      <p>An IoT-based project concept to support smart agriculture using sensors and technology.</p>
+    </div>
+    <div class="card">
+      <h3>🚗 Smart Road Pothole Detection</h3>
+      <p>A project concept to identify road potholes and record their locations using sensors and GPS.</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Personal Portfolio</h3>
+      <p>A website showcasing my skills, projects and learning journey.</p>
+    </div>
+  </div>
+</section>
+
 <section id="superpower">
-  <h2>My Tech Superpower ⚡</h2>
-  <p>Explore what makes me unique!</p>
+  <h2>⚡ My Tech Superpower</h2>
+  <p>Choose a card to explore my strengths!</p>
 
   <div class="superpower-container">
-    <div class="power-card" onclick="showPower('Creative Designer', 'I turn ideas into creative designs and meaningful experiences.')">
+    <div class="card power-card" onclick="showPower('Creative Designer', 'I turn ideas into creative designs and meaningful visual experiences.')">
       <h3>🎨 Creative Designer</h3>
       <p>Design, Branding & Creativity</p>
       <button>Explore</button>
     </div>
 
-    <div class="power-card" onclick="showPower('Tech Explorer', 'I explore ENTC, IoT and emerging technologies through hands-on learning.')">
+    <div class="card power-card" onclick="showPower('Tech Explorer', 'I explore ENTC, IoT and emerging technologies through hands-on learning.')">
       <h3>💻 Tech Explorer</h3>
       <p>ENTC, IoT & Technology</p>
       <button>Explore</button>
     </div>
 
-    <div class="power-card" onclick="showPower('Innovator', 'I transform ideas into projects and solve real-world problems.')">
+    <div class="card power-card" onclick="showPower('Innovator', 'I transform ideas into projects and explore solutions to real-world problems.')">
       <h3>🚀 Innovator</h3>
       <p>Ideas, Projects & Problem Solving</p>
       <button>Explore</button>
     </div>
   </div>
 
-  <p id="power-result"></p>
+  <div id="power-result">Your selected superpower will appear here.</div>
 </section>
 
-<style>
-#superpower {
-  text-align: center;
-  padding: 50px 20px;
-}
-.superpower-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.power-card {
-  background: #171d35;
-  border: 1px solid #7655ff;
-  border-radius: 15px;
-  padding: 25px;
-  width: 220px;
-  cursor: pointer;
-  color: white;
-}
-.power-card:hover {
-  transform: translateY(-6px);
-  transition: 0.3s;
-}
-.power-card button {
-  background: #7655ff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-}
-#power-result {
-  color: #b9a8ff;
-  margin-top: 25px;
-}
-</style>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Thank you for visiting my portfolio!</p>
+  <p>Let's connect and explore new possibilities.</p>
+</section>
+
+<footer>
+  © 2026 Dhrupata Wankhede | Personal Portfolio
+</footer>
 
 <script>
 function showPower(title, description) {
@@ -96,67 +234,6 @@ function showPower(title, description) {
     "<h3>" + title + "</h3><p>" + description + "</p>";
 }
 </script>
-<body>
-<header>
-<div class="logo">DW.</div>
-<nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#experience">Experience</a>
-</nav>
-</header>
 
-<section class="hero">
-<p class="tag">HELLO, WELCOME TO MY PORTFOLIO</p>
-<h1>I'm <span>Dhrupata Wankhede</span></h1>
-<h3>ENTC Engineering Student | Creative Designer | Tech Enthusiast</h3>
-<p>I'm passionate about technology, creativity, cloud computing and building innovative solutions.</p>
-<a class="btn" href="#projects">Explore My Work</a>
-</section>
-
-<section id="about">
-<h2>About Me</h2>
-<div class="card">
-<p>I am an Electronics and Telecommunication Engineering student interested in technology, design, innovation and learning new skills. I enjoy working on creative designs and technology-based projects.</p>
-</div>
-</section>
-
-<section id="skills">
-<h2>My Skills</h2>
-<div class="grid">
-<div class="card"><h3>Design & Branding</h3><p>Creative posters, social media graphics and branding.</p></div>
-<div class="card"><h3>Technology</h3><p>Electronics, IoT and cloud computing fundamentals.</p></div>
-<div class="card"><h3>Programming</h3><p>Learning programming and web development.</p></div>
-<div class="card"><h3>Teamwork</h3><p>Collaboration, communication and event coordination.</p></div>
-</div>
-</section>
-
-<section id="projects">
-<h2>My Projects</h2>
-<div class="grid">
-<div class="card"><h3>Smart Farming Assistant</h3><p>An IoT-based farming concept using ESP32-CAM, sensors and AI to support smart agriculture.</p></div>
-<div class="card"><h3>Smart Road Pothole Detection</h3><p>A project concept using ESP32, accelerometer and GPS to identify road pothole locations.</p></div>
-</div>
-</section>
-
-<section id="experience">
-<h2>Experience</h2>
-<div class="card">
-<h3>AWS Student Builder Group</h3>
-<p>Design and Branding Lead</p>
-<p>Creating visual content, branding materials and event designs for the student community.</p>
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-<p>Let's connect and collaborate!</p>
-<p>Email: Add your email address here</p>
-</div>
-</section>
-
-<footer>© 2026 Dhrupata Wankhede | Personal Portfolio</footer>
 </body>
 </html>
