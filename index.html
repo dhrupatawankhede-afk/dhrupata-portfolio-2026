@@ -26,6 +26,76 @@ h2{font-size:30px;color:#a78bfa;margin-bottom:25px}
 footer{text-align:center;padding:25px;background:#101831;color:#cbd5e1}
 </style>
 </head>
+<section id="superpower">
+  <h2>My Tech Superpower ⚡</h2>
+  <p>Explore what makes me unique!</p>
+
+  <div class="superpower-container">
+    <div class="power-card" onclick="showPower('Creative Designer', 'I turn ideas into creative designs and meaningful experiences.')">
+      <h3>🎨 Creative Designer</h3>
+      <p>Design, Branding & Creativity</p>
+      <button>Explore</button>
+    </div>
+
+    <div class="power-card" onclick="showPower('Tech Explorer', 'I explore ENTC, IoT and emerging technologies through hands-on learning.')">
+      <h3>💻 Tech Explorer</h3>
+      <p>ENTC, IoT & Technology</p>
+      <button>Explore</button>
+    </div>
+
+    <div class="power-card" onclick="showPower('Innovator', 'I transform ideas into projects and solve real-world problems.')">
+      <h3>🚀 Innovator</h3>
+      <p>Ideas, Projects & Problem Solving</p>
+      <button>Explore</button>
+    </div>
+  </div>
+
+  <p id="power-result"></p>
+</section>
+
+<style>
+#superpower {
+  text-align: center;
+  padding: 50px 20px;
+}
+.superpower-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.power-card {
+  background: #171d35;
+  border: 1px solid #7655ff;
+  border-radius: 15px;
+  padding: 25px;
+  width: 220px;
+  cursor: pointer;
+  color: white;
+}
+.power-card:hover {
+  transform: translateY(-6px);
+  transition: 0.3s;
+}
+.power-card button {
+  background: #7655ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+#power-result {
+  color: #b9a8ff;
+  margin-top: 25px;
+}
+</style>
+
+<script>
+function showPower(title, description) {
+  document.getElementById("power-result").innerHTML =
+    "<h3>" + title + "</h3><p>" + description + "</p>";
+}
+</script>
 <body>
 <header>
 <div class="logo">DW.</div>
