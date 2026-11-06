@@ -190,32 +190,43 @@ footer {
     </div>
   </div>
 </section>
-
 <section id="superpower">
   <h2>⚡ My Tech Superpower</h2>
   <p>Choose a card to explore my strengths!</p>
 
   <div class="superpower-container">
-    <div class="card power-card" onclick="showPower('Creative Designer', 'I turn ideas into creative designs and meaningful visual experiences.')">
+
+    <div class="card power-card">
       <h3>🎨 Creative Designer</h3>
       <p>Design, Branding & Creativity</p>
-      <button>Explore</button>
+      <button type="button"
+      onclick="document.getElementById('power-result').textContent='I turn ideas into creative designs and meaningful visual experiences.'">
+      Explore
+      </button>
     </div>
 
-    <div class="card power-card" onclick="showPower('Tech Explorer', 'I explore ENTC, IoT and emerging technologies through hands-on learning.')">
+    <div class="card power-card">
       <h3>💻 Tech Explorer</h3>
       <p>ENTC, IoT & Technology</p>
-      <button>Explore</button>
+      <button type="button"
+      onclick="document.getElementById('power-result').textContent='I explore ENTC, IoT and emerging technologies through hands-on learning.'">
+      Explore
+      </button>
     </div>
 
-    <div class="card power-card" onclick="showPower('Innovator', 'I transform ideas into projects and explore solutions to real-world problems.')">
+    <div class="card power-card">
       <h3>🚀 Innovator</h3>
       <p>Ideas, Projects & Problem Solving</p>
-      <button>Explore</button>
+      <button type="button"
+      onclick="document.getElementById('power-result').textContent='I transform ideas into projects and explore solutions to real-world problems.'">
+      Explore
+      </button>
     </div>
+
   </div>
 
-  <div id="power-result">Your selected superpower will appear here.</div>
+  <p id="power-result">Your selected power will appear here.</p>
+
 </section>
 
 <section id="contact">
