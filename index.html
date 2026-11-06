@@ -14,125 +14,240 @@
   scroll-behavior: smooth;
 }
 
+:root {
+  --orange: #ff9900;
+  --blue: #38bdf8;
+  --navy: #07111f;
+  --card: #101e32;
+  --white: #f8fafc;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #080d1c;
-  color: white;
-  line-height: 1.6;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.7;
 }
 
 header {
-  padding: 22px 8%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(7,17,31,0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #243750;
+  padding: 18px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #10182d;
-  position: sticky;
-  top: 0;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.logo { color: #a78bfa; font-size: 22px; font-weight: bold; }
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--orange);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
 
 nav a {
-  color: white;
+  color: #dce7f5;
   text-decoration: none;
-  margin-left: 18px;
+  font-size: 14px;
 }
 
-section { padding: 65px 8%; }
+nav a:hover {
+  color: var(--orange);
+}
+
+section {
+  padding: 85px 9%;
+}
 
 .hero {
-  min-height: 75vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background:
+    radial-gradient(ellipse at 80% 35%, #12345a 0%, transparent 45%),
+    radial-gradient(ellipse at 10% 80%, #35234c 0%, transparent 35%);
+}
+
+.tag {
+  color: var(--orange);
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .hero h1 {
-  font-size: 42px;
-  margin: 12px 0;
+  font-size: clamp(38px, 7vw, 68px);
+  line-height: 1.2;
+  margin: 20px 0;
 }
 
-.highlight { color: #a78bfa; }
+.highlight {
+  color: var(--orange);
+}
 
-.hero p, .about p {
-  color: #c5c9d8;
-  max-width: 650px;
+.hero h3 {
+  color: var(--blue);
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+
+.hero p, .about p, .intro {
+  color: #b9c9dc;
+  max-width: 680px;
 }
 
 .btn {
   display: inline-block;
-  background: #7655ff;
-  color: white;
-  padding: 11px 22px;
+  width: fit-content;
+  padding: 13px 25px;
+  margin-top: 25px;
   border-radius: 8px;
+  background: linear-gradient(100deg, #ff9900, #ffbd55);
+  color: #111827;
+  font-weight: bold;
   text-decoration: none;
-  margin-top: 20px;
+  box-shadow: 0 0 22px #ff990044;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px #ff990088;
 }
 
 h2 {
-  color: #a78bfa;
-  margin-bottom: 22px;
-  font-size: 30px;
+  font-size: 32px;
+  color: var(--orange);
+  margin-bottom: 18px;
 }
 
-.skills, .projects, .superpower-container {
+.section-label {
+  color: var(--blue);
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 18px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
 }
 
 .card {
-  background: #151e35;
-  padding: 24px;
-  border: 1px solid #343d61;
-  border-radius: 14px;
+  background: linear-gradient(145deg, #13243a, #0c182a);
+  border: 1px solid #29415e;
+  border-radius: 16px;
+  padding: 26px;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  border-color: #a78bfa;
+  transform: translateY(-7px);
+  border-color: var(--orange);
+  box-shadow: 0 10px 35px #ff99001c;
 }
 
-.card h3 { margin-bottom: 10px; color: #c4b5fd; }
+.card h3 {
+  color: var(--blue);
+  margin-bottom: 12px;
+}
 
-.card p { color: #c5c9d8; }
+.card p {
+  color: #b9c9dc;
+}
 
 .power-card {
-  cursor: pointer;
   text-align: center;
+}
+
+.power-card .emoji {
+  font-size: 35px;
+  margin-bottom: 12px;
 }
 
 .power-card button {
-  margin-top: 15px;
-  padding: 9px 18px;
-  border: none;
-  border-radius: 7px;
-  background: #7655ff;
-  color: white;
+  margin-top: 20px;
+  padding: 11px 23px;
+  border: 1px solid var(--orange);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--orange);
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.power-card button:hover {
+  background: var(--orange);
+  color: #07111f;
 }
 
 #power-result {
-  margin-top: 25px;
-  color: #c4b5fd;
+  display: none;
+  margin-top: 30px;
+  padding: 28px;
+  border: 1px solid var(--blue);
+  border-radius: 15px;
+  background: #10243a;
   text-align: center;
-  padding: 15px;
+  box-shadow: 0 0 25px #38bdf822;
+}
+
+#power-result h3 {
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+#power-result p {
+  color: #dce7f5;
+}
+
+.contact-box {
+  padding: 30px;
+  border: 1px solid #29415e;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #13243a, #102c43);
 }
 
 footer {
   text-align: center;
   padding: 25px;
-  background: #10182d;
-  color: #c5c9d8;
+  background: #050b14;
+  color: #91a5bd;
+  border-top: 1px solid #243750;
 }
 
 @media(max-width:600px) {
-  header { flex-direction: column; gap: 12px; }
-  nav a { margin: 5px; font-size: 13px; }
-  .hero h1 { font-size: 32px; }
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+
+  .hero {
+    min-height: 75vh;
+  }
 }
 </style>
 </head>
@@ -147,112 +262,200 @@ footer {
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#superpower">Superpower</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
+<!-- HOME -->
 <section class="hero" id="home">
-  <p>Hello, welcome to my portfolio!</p>
-  <h1>I'm <span class="highlight">Dhrupata Wankhede</span></h1>
+  <p class="tag">WELCOME TO MY DIGITAL SPACE</p>
+
+  <h1>Hi, I'm <span class="highlight">Dhrupata Wankhede</span></h1>
+
   <h3>ENTC Engineering Student | Creative Designer | Tech Enthusiast</h3>
-  <p>Exploring technology, creativity and innovation to build meaningful solutions.</p>
-  <a href="#about" class="btn">Explore My Portfolio</a>
+
+  <p>
+    Exploring the world of technology, cloud computing
+    and innovation. Turning creative ideas into meaningful
+    digital experiences.
+  </p>
+
+  <a href="#projects" class="btn">Explore My Work ↗</a>
 </section>
 
-<section class="about" id="about">
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">01 / INTRODUCTION</p>
   <h2>About Me</h2>
-  <p>I am an Electronics and Telecommunication Engineering student passionate about technology, creative design and innovation. I enjoy learning new skills, exploring IoT and turning ideas into practical projects.</p>
+
+  <p>
+    I am an Electronics and Telecommunication Engineering
+    student passionate about technology, creative design
+    and innovation. I enjoy exploring IoT, learning new
+    technologies and building ideas into practical projects.
+  </p>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
+  <p class="section-label">02 / WHAT I DO</p>
   <h2>My Skills</h2>
-  <div class="skills">
-    <div class="card"><h3>🎨 Design</h3><p>Creative Design & Branding</p></div>
-    <div class="card"><h3>💻 Technology</h3><p>ENTC & IoT Exploration</p></div>
-    <div class="card"><h3>🤝 Teamwork</h3><p>Communication & Collaboration</p></div>
-    <div class="card"><h3>🚀 Learning</h3><p>Problem Solving & Innovation</p></div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🎨 Creative Design</h3>
+      <p>Visual design, branding and creative thinking.</p>
+    </div>
+
+    <div class="card">
+      <h3>💻 Technology</h3>
+      <p>ENTC, IoT and technology exploration.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤝 Collaboration</h3>
+      <p>Teamwork, communication and coordination.</p>
+    </div>
+
+    <div class="card">
+      <h3>🚀 Problem Solving</h3>
+      <p>Innovation, learning and practical thinking.</p>
+    </div>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-  <h2>My Projects</h2>
-  <div class="projects">
+  <p class="section-label">03 / WHAT I'M BUILDING</p>
+  <h2>Featured Projects</h2>
+
+  <div class="grid">
     <div class="card">
       <h3>🌱 Smart Farming Assistant</h3>
-      <p>An IoT-based project concept to support smart agriculture using sensors and technology.</p>
+      <p>
+        An IoT project exploring sensor-based monitoring
+        and technology for smart agriculture.
+      </p>
     </div>
+
     <div class="card">
       <h3>🚗 Smart Road Pothole Detection</h3>
-      <p>A project concept to identify road potholes and record their locations using sensors and GPS.</p>
+      <p>
+        An ESP32-based project concept using sensors
+        and GPS to identify potential pothole locations.
+      </p>
     </div>
+
     <div class="card">
       <h3>🌐 Personal Portfolio</h3>
-      <p>A website showcasing my skills, projects and learning journey.</p>
+      <p>
+        A personal website showcasing my skills,
+        projects and creative journey.
+      </p>
     </div>
   </div>
 </section>
+
+<!-- TECH SUPERPOWER -->
 <section id="superpower">
+  <p class="section-label">04 / MY UNIQUE STRENGTHS</p>
   <h2>⚡ My Tech Superpower</h2>
-  <p>Choose a card to explore my strengths!</p>
 
-  <div class="superpower-container">
+  <p class="intro">
+    Three strengths. One creative mind.
+    Select a card to discover more!
+  </p>
+
+  <div class="grid">
 
     <div class="card power-card">
-      <h3>🎨 Creative Designer</h3>
+      <div class="emoji">🎨</div>
+      <h3>Creative Designer</h3>
       <p>Design, Branding & Creativity</p>
-      <button type="button"
-      onclick="document.getElementById('power-result').textContent='I turn ideas into creative designs and meaningful visual experiences.'">
-      Explore
+      <button type="button" class="power-button"
+        data-title="Creative Designer"
+        data-description="I turn ideas into creative designs and meaningful visual experiences.">
+        Explore ↗
       </button>
     </div>
 
     <div class="card power-card">
-      <h3>💻 Tech Explorer</h3>
+      <div class="emoji">💻</div>
+      <h3>Tech Explorer</h3>
       <p>ENTC, IoT & Technology</p>
-      <button type="button"
-      onclick="document.getElementById('power-result').textContent='I explore ENTC, IoT and emerging technologies through hands-on learning.'">
-      Explore
+      <button type="button" class="power-button"
+        data-title="Tech Explorer"
+        data-description="I explore ENTC, IoT and emerging technologies through hands-on learning.">
+        Explore ↗
       </button>
     </div>
 
     <div class="card power-card">
-      <h3>🚀 Innovator</h3>
+      <div class="emoji">🚀</div>
+      <h3>Innovator</h3>
       <p>Ideas, Projects & Problem Solving</p>
-      <button type="button"
-      onclick="document.getElementById('power-result').textContent='I transform ideas into projects and explore solutions to real-world problems.'">
-      Explore
+      <button type="button" class="power-button"
+        data-title="Innovator"
+        data-description="I transform ideas into projects and explore solutions to real-world problems.">
+        Explore ↗
       </button>
     </div>
 
   </div>
 
-  <p id="power-result">Your selected power will appear here.</p>
-
+  <div id="power-result" aria-live="polite">
+    <h3 id="result-title"></h3>
+    <p id="result-description"></p>
+  </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Thank you for visiting my portfolio!</p>
-  <p>Let's connect and explore new possibilities.</p>
+  <p class="section-label">05 / LET'S CONNECT</p>
+  <h2>Have an Idea?</h2>
+
+  <div class="contact-box">
+    <p>
+      I'm always excited to learn, collaborate
+      and explore new possibilities.
+    </p>
+    <p style="color:#ff9900; margin-top:12px;">
+      Let's create something meaningful!
+    </p>
+  </div>
 </section>
 
 <footer>
-  © 2026 Dhrupata Wankhede | Personal Portfolio
+  © 2026 Dhrupata Wankhede | Built with creativity & curiosity.
 </footer>
 
 <script>
-function showPower(title, description) {
-  document.getElementById("power-result").innerHTML =
-    "<h3>" + title + "</h3><p>" + description + "</p>";
-}
-<script>
-document.querySelectorAll('.power-card').forEach(function(card) {
-  card.addEventListener('click', function() {
-    const heading = card.querySelector('h3').innerText;
-    const description = card.querySelector('p').innerText;
+document.addEventListener("DOMContentLoaded", function() {
 
-    document.getElementById('power-result').innerHTML =
-      '<h3>' + heading + '</h3><p>' + description + '</p>';
+  const buttons = document.querySelectorAll(".power-button");
+
+  buttons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+      const title = button.dataset.title;
+      const description = button.dataset.description;
+
+      document.getElementById("result-title").textContent = title;
+      document.getElementById("result-description").textContent = description;
+
+      const result = document.getElementById("power-result");
+      result.style.display = "block";
+
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    });
+
   });
+
 });
 </script>
 
