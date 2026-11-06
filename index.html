@@ -233,7 +233,16 @@ function showPower(title, description) {
   document.getElementById("power-result").innerHTML =
     "<h3>" + title + "</h3><p>" + description + "</p>";
 }
-</script>
+<script>
+document.querySelectorAll('.power-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    const heading = card.querySelector('h3').innerText;
+    const description = card.querySelector('p').innerText;
 
+    document.getElementById('power-result').innerHTML =
+      '<h3>' + heading + '</h3><p>' + description + '</p>';
+  });
+});
+</script>
 </body>
 </html>
