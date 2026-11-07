@@ -251,22 +251,59 @@ footer {
   border-top: 1px solid #243750;
 }
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
   header {
     justify-content: center;
+    padding: 15px 5%;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 24px;
   }
 
   nav {
     justify-content: center;
-    gap: 12px;
+    gap: 10px 14px;
+  }
+
+  nav a {
+    font-size: 13px;
   }
 
   section {
-    padding: 65px 7%;
+    padding: 60px 6%;
   }
 
   .hero {
     min-height: 75vh;
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+
+  .hero h3 {
+    font-size: 16px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 22px;
   }
 }
 </style>
